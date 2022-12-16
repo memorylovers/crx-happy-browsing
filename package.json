@@ -1,0 +1,76 @@
+{
+  "name": "crx-happy-browsing",
+  "version": "1.0.0",
+  "description": "Chrome Extension to happy browsing :D",
+  "author": "Memory Lovers, LLC<https://github.com/memorylovers>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/memory-lovers",
+  "homepage": "https://github.com/memorylovers/crx-happy-browsing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memorylovers/crx-happy-browsing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/memorylovers/crx-happy-browsing/issues"
+  },
+  "type": "module",
+  "keywords": [],
+  "scripts": {
+    "dev": "pnpm build:data && vite",
+    "build": "pnpm build:data && pnpm build:crx",
+    "build:crx": "vue-tsc && vite build",
+    "build:data": "pnpm jiti scripts/buildData.ts",
+    "clean": "rm -rf dist/*",
+    "lint:js": "pnpm eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore -fix",
+    "lint:css": "pnpm stylelint src/**/*.css --fix",
+    "package": "pnpm clean && pnpm build && . ./scripts/createZip.sh",
+    "minify:lottie": "pnx @josee9988/minifyall public/lotties/*.json"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.0.0-beta.7",
+    "@iconify/vue": "^4.0.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/chrome": "^0.0.203",
+    "@types/howler": "^2.2.7",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^16",
+    "@types/uuid": "^9.0.0",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "autoprefixer": "^10.4.13",
+    "chrome-types": "^0.1.153",
+    "eslint": "^8.29.0",
+    "fast-glob": "^3.2.12",
+    "jiti": "^1.16.0",
+    "jsdom": "^20.0.3",
+    "lint-staged": "^13.1.0",
+    "postcss": "^8.4.19",
+    "prettier": "^2.8.0",
+    "prettier-plugin-md-nocjsp": "^1.5.0",
+    "prettier-plugin-sh": "^0.12.8",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "tailwindcss": "^3.2.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "vue-tsc": "^1.0.11"
+  },
+  "lint-staged": {
+    "*.{md,sh,json,cjs,ts,js}": "prettier --write"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.4",
+    "daisyui": "^2.42.1",
+    "defu": "^6.1.1",
+    "howler": "^2.2.3",
+    "lodash-es": "^4.17.21",
+    "lottie-web": "^5.10.0",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.45"
+  }
+}

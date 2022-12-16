@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "vite.config.ts",
+    "manifest.config.ts",
+    "manifest.json",
+    "package.json",
+    "vitest.config.ts",
+    "commitlint.config.cjs"
+  ]
+}

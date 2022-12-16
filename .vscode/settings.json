@@ -1,0 +1,9 @@
+{
+  "markdownlint.ignore": ["**/node_modules", "**/.git", "**/dist", "**/LICENSE"],
+  "markdownlint.config": {
+    "MD034": false
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
